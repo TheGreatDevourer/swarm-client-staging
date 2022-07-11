@@ -581,8 +581,9 @@ export default defineComponent({
       }
       let currDate = new Date()
       console.log(currDate.toISOString())
-      console.log(media_list)
-      let url = "https://swarmnet-staging.herokuapp.com/posts"     
+
+      let url = "https://swarmnet-staging.herokuapp.com/posts"
+      
               api.post(url,{
               topic_id: ptopid.value,  
               text: text,
