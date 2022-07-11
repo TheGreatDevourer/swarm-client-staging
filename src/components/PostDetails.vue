@@ -12,9 +12,10 @@
 
         <q-item-section>
           <q-item-label> <strong> {{title}} </strong></q-item-label>
-          <q-img v-for="m in media" :key="m.id" :src = "m.urlPath">  
-            
-          </q-img>
+          <q-item v-for="m in media" :key="m.id">
+              <q-img :v-if= "m.mimetype == 'jpg' || m.mimetype == 'png' || m.mimetype == 'gif'" :src = "m.urlPath"></q-img>
+              <video :v-if= "m.mimetype === 'mp4'" controls autoplay :src= "m.urlPath" type='video/mp4'></video>
+          </q-item>
           <div class="row no-wrap items-center bg-grey-3 rounded-borders">
             <q-chip square color="purple-2" text-color="white" icon="sell" size="md"
                           v-for="tags in postTags" 
